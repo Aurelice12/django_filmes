@@ -1,0 +1,14 @@
+<h1>Criar Filme</h1>
+<form method="post">
+  {% csrf_token %}
+  Título: <input type="text" name="titulo"><br>
+  Ano: <input type="number" name="ano"><br>
+  Diretor: 
+  <select name="diretor">
+    {% for diretor in diretores %}
+    <option value="{{ diretor.id }}">{{ diretor.nome }}</option>
+    {% endfor %}
+  </select><br>
+  <button type="submit">Salvar</button>
+</form>
+<a href="{% url 'listar_filmes' %}">Voltar</a>

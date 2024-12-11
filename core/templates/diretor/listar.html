@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretores</title>
+</head>
+<body>
+    <h1>Lista de Diretores</h1>
+
+    <ul>
+        {% for diretor in diretores %}
+            <li>{{ diretor.nome }} 
+                <a href="{% url 'editar_diretor' diretor.id %}">Editar</a> |
+                <a href="{% url 'deletar_diretor' diretor.id %}">Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'criar_diretor' %}">Adicionar Diretor</a> | 
+    <a href="{% url 'pagina_inicial' %}">Página Inicial</a> |
+    <a href="{% url 'listar_filmes' %}">Ir para Filmes</a>
+</body>
+</html>

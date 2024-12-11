@@ -1,0 +1,8 @@
+<h1>Criar Diretor</h1>
+<form method="post">
+  {% csrf_token %}
+  Nome: <input type="text" name="nome"><br>
+  Nacionalidade: <input type="text" name="nacionalidade"><br>
+  <button type="submit">Salvar</button>
+</form>
+<a href="{% url 'listar_diretores' %}">Voltar</a>
